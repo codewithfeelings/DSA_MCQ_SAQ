@@ -1720,11 +1720,11 @@
 
     **Answer:**  
 
-    for each element in the list:     if element == target: 
-
-    `        `return index 
-
-    return -1 
+    ```c for each element in the list:     
+    if element == target: 
+    return index 
+    return -1
+    ```
 
 **Module 7:  Hashing**
 
