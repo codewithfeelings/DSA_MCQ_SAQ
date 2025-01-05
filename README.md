@@ -988,15 +988,15 @@
 1. **Write a function to insert a node at the beginning of a singly linked list.** 
 
    **Answer:**  
-
+```c
    void insertAtBeginning(Node\*\* head, int data) {     Node\* newNode = (Node\*)malloc(sizeof(Node));     newNode->data = data; 
 
-   `    `newNode->next = \*head; 
+ newNode->next = \*head; 
 
-   `    `\*head = newNode; 
+  \*head = newNode; 
 
    } 
-
+```
 9. **What is a self-organizing list? Give an example.** 
 
    **Answer:**  A self-organizing list reorganizes elements based on access patterns, e.g., move-to-front strategy. 
@@ -1217,17 +1217,13 @@
 8. **Write a recursive function to calculate factorial in pseudocode.** 
 
    **Answer:**  
-
+```python
    def factorial(n):   
-
-   `    `if n == 0:   
-
-   `        `return 1   
-
-   `    `else:   
-
-   `        `return n \* factorial(n-1)   
-
+   if n == 0:   
+   return 1   
+   else:   
+   return n \* factorial(n-1)   
+```
 9. **What is the time complexity of calculating Fibonacci numbers recursively?** **Answer:**  O(2^n) without memoization. 
 9. **Why is recursion inefficient for large inputs in the Fibonacci sequence?** 
 
@@ -1963,8 +1959,8 @@
 20. **Write an algorithm to handle collisions using separate chaining.** 
 
     **Answer:**  
-
-    function insert(key, value):
+```c
+function insert(key, value):
 
 index = hashFunction(key)
 
@@ -1972,7 +1968,7 @@ if table[index] is empty:
 
 create a new linked list
 
-append (key, value) to the linked list at table[index]
-33 
+append (key, value) to the linked list at table[index] 
+```
 
 
