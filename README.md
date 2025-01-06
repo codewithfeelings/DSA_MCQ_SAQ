@@ -1184,36 +1184,55 @@
 ## Short-Answer Questions
  
 
-1. **What is recursion?** **Answer:**  Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. 
-1. **What is a base case in recursion? Why is it important?** **Answer:**  A base case is a condition that stops the recursion. It prevents infinite recursion and stack overflow. 
+1. **What is recursion?** 
+
+   **Answer:**  
+```
+Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. 
+```
+
+1. **What is a base case in recursion? Why is it important?** 
+
+   **Answer:** 
+```
+ A base case is a condition that stops the recursion. It prevents infinite recursion and stack overflow. 
+
+``` 
 1. **Write the recursive formula for the Fibonacci sequence.** 
 
    **Answer:**  
-
+```
    F(n)=F(n−1)+F(n−2),F(n) = F(n-1) + F(n-2), 
 
    with F(0)=0F(0) = 0 and F(1)=1F(1) = 1. 
-
+```
 4. **What is tail recursion?** 
 
-   **Answer:**  Tail recursion is a type of recursion where the recursive call is the last operation in the function. 
-
+   **Answer:**  
+```
+   Tail recursion is a type of recursion where the recursive call  
+   is the last operation in the function. 
+```
 5. **Write the recurrence relation for the Tower of Hanoi problem.** 
 
    **Answer:**  
-
+```
    T(n)=2T(n−1)+1,T(n) = 2T(n-1) + 1, 
-
    where T(1)=1T(1) = 1. 
-
+```
 6. **What is the difference between recursion and iteration?** 
-
-   **Answer:**  Recursion uses function calls and an implicit stack, while iteration uses loops and explicit variables. 
-
+    
+    **Answer:**  
+```
+   Recursion uses function calls and an implicit stack, while 
+   iteration uses loops and explicit variables. 
+```
 7. **What happens if a recursive function lacks a base case?** 
-
-   **Answer:**  It causes infinite recursion, leading to a stack overflow error. 
-
+  
+   **Answer:**  
+```
+   It causes infinite recursion, leading to a stack overflow error. 
+```
 8. **Write a recursive function to calculate factorial in pseudocode.** 
 
    **Answer:**  
@@ -1224,42 +1243,57 @@
    else:   
    return n \* factorial(n-1)   
 ```
-9. **What is the time complexity of calculating Fibonacci numbers recursively?** **Answer:**  O(2^n) without memoization. 
+9. **What is the time complexity of calculating Fibonacci numbers recursively?** 
+
+   **Answer:**  
+```   
+   O(2^n) without memoization. 
+```
 9. **Why is recursion inefficient for large inputs in the Fibonacci sequence?** 
 
-   **Answer:**  It leads to repeated calculations, which increase time complexity exponentially. 
-
+   **Answer:**
+```   
+It leads to repeated calculations, which increase time complexity exponentially. 
+```
 11. **Write the recursive solution for the Tower of Hanoi problem.** 
 
     **Answer:**  
+```python
+    def TowerOfHanoi(n, source, target, auxiliary):
+    if n == 1:
+        print("Move disk 1 from", source, "to", target)
+        return
+    
+    TowerOfHanoi(n - 1, source, auxiliary, target)
+    print("Move disk", n, "from", source, "to", target)
+    TowerOfHanoi(n - 1, auxiliary, target, source)
 
-    def TowerOfHanoi(n, source, target, auxiliary):   
-
-    `    `if n == 1:   
-
-    `        `print("Move disk 1 from", source, "to", target)           return   
-
-    `    `TowerOfHanoi(n-1, source, auxiliary, target)   
-
-    `    `print("Move disk", n, "from", source, "to", target)       TowerOfHanoi(n-1, auxiliary, target, source)   
-
+# Example usage:
+n = 3
+TowerOfHanoi(n, 'A', 'C', 'B')
+  
+```
 12. **What are the advantages of recursion?** 
 
     **Answer:**  Simplifies the code and is useful for problems like divide-and-conquer or tree traversal. 
 
 13. **Explain with an example how recursion uses the stack.** 
 
-    **Answer:**  Each recursive call pushes the function state onto the stack. For example, in factorial, the stack holds intermediate values until the base case is reached. 
-
+    **Answer:**  
+```
+    Each recursive call pushes the function state onto the stack. For example, in factorial, the stack holds intermediate values until the base case is reached. 
+```
 14. **What is the output of factorial(4)?** 
 
     **Answer:**  24 (4 × 3 × 2 × 1). 
 
 15. **How is the Tower of Hanoi problem solved recursively?** 
 
-    **Answer:**  By moving n−1n-1 disks to an auxiliary peg, moving the largest disk to the target peg, and then moving n−1n-1 disks from the auxiliary peg to the target peg. 
-
-**Module 5:  Trees**: 
+    **Answer:**  
+```    
+    By moving n−1n-1 disks to an auxiliary peg, moving the largest disk to the target peg, and then moving n−1n-1 disks from the auxiliary peg to the target peg. 
+```
+***Module 5:  Trees***: 
 
 **Multiple-Choice Questions (MCQs)**
 ## Multiple-Choice Questions
@@ -1323,7 +1357,7 @@
 
 8. **In a binary search tree (BST), where are smaller elements stored compared to the root?** 
 - A. Left subtree 
-- B. Right subtree ![ref1]
+- B. Right subtree 
 - C. Root node 
 - D. Both left and right subtrees 
 
@@ -1377,13 +1411,13 @@
 
   **Answer:**  A 
 
-15. **In a binary tree, the maximum number of nodes at level ll is:** 
-- A. 2l2^l 
+15. **In a binary tree, the maximum number of nodes at level 11 is:** 
+<!-- - A. 2l2^l 
 - B. 2l−12^{l-1} 
 - C. 2l+1−12^{l+1} - 1 
-- D. l×2l \times 2 
+- D. l×2l \times 2  -->
 
-  **Answer:**  2l−12^{l-1} 
+ - **Answer:**  $2^{11}$ = 2048
 
 16. **Which rotation is performed in an AVL tree when a node is inserted into the right subtree of the right child?** 
 - A. Left rotation 
@@ -1442,10 +1476,11 @@
 
 6. **Write the in-order traversal of the following binary tree:** 
 
-   `     ` 5
-
-   `   `/ \   
-   ` `3   8 
+```
+     5
+    / \
+   3   8
+```
 
    **Answer:**  3, 5, 8 
 
